@@ -33,6 +33,9 @@ var settings = map[string]string{
 	"log_color_runner":  "green",
 	"log_color_watcher": "magenta",
 	"log_color_app":     "",
+
+	"run_command": "",
+	"run_flags":   "",
 }
 
 var colors = map[string]string{
@@ -125,6 +128,14 @@ func buildPath() string {
 		p += ".exe"
 	}
 	return p
+}
+
+func buildCommands() string {
+	return settings["run_command"]
+}
+
+func buildFlags() string {
+	return settings["run_flags"]
 }
 
 func buildErrorsFileName() string {
